@@ -1,0 +1,219 @@
+# API Contract: Book Content Management
+
+## Overview
+This document defines the API contracts for the AI/Spec-driven book creation system. These APIs enable content management, AI-assisted writing, and validation of academic content.
+
+## Base URL
+```
+https://api.book-creation.example.com/v1
+```
+
+## Content Management APIs
+
+### Create New Book
+```
+POST /books
+```
+
+**Request Body:**
+```json
+{
+  "title": "string (required)",
+  "subtitle": "string (optional)",
+  "authors": [
+    {
+      "name": "string (required)",
+      "affiliation": "string (optional)",
+      "email": "string (optional)"
+    }
+  ],
+  "phase": "enum (RESEARCH|FOUNDATION|ANALYSIS|SYNTHESIS) (required)",
+  "description": "string (optional)",
+  "tags": ["string (optional)"],
+  "status": "enum (DRAFT|REVIEW|PUBLISHED) (default: DRAFT)"
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "id": "string",
+  "title": "string",
+  "subtitle": "string",
+  "authors": [
+    {
+      "id": "string",
+      "name": "string",
+      "affiliation": "string",
+      "email": "string"
+    }
+  ],
+  "phase": "enum",
+  "description": "string",
+  "tags": ["string"],
+  "createdAt": "datetime",
+  "updatedAt": "datetime",
+  "status": "enum"
+}
+```
+
+### Get Book Details
+```
+GET /books/{bookId}
+```
+
+**Response (200 OK):**
+```json
+{
+  "id": "string",
+  "title": "string",
+  "subtitle": "string",
+  "authors": [
+    {
+      "id": "string",
+      "name": "string",
+      "affiliation": "string",
+      "email": "string"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "string",
+      "title": "string",
+      "order": "integer",
+      "status": "enum"
+    }
+  ],
+  "phase": "enum",
+  "description": "string",
+  "tags": ["string"],
+  "createdAt": "datetime",
+  "updatedAt": "datetime",
+  "status": "enum"
+}
+```
+
+### Create Chapter
+```
+POST /books/{bookId}/chapters
+```
+
+**Request Body:**
+```json
+{
+  "title": "string (required)",
+  "subtitle": "string (optional)",
+  "content": "string (required - Markdown format)",
+  "order": "integer (required)",
+  "phase": "enum (optional, defaults to book phase)",
+  "authors": [
+    {
+      "name": "string (required)",
+      "affiliation": "string (optional)",
+      "email": "string (optional)"
+    }
+  ],
+  "tags": ["string (optional)"],
+  "references": [
+    {
+      "title": "string (required)",
+      "authors": ["string (required)"],
+      "year": "integer (required)",
+      "type": "enum (BOOK|JOURNAL|WEB|CONFERENCE|OTHER) (required)",
+      "apaCitation": "string (required)"
+    }
+  ],
+  "status": "enum (DRAFT|REVIEW|PUBLISHED) (default: DRAFT)"
+}
+```
+
+### Validate Citations
+```
+POST /validate/citations
+```
+
+**Request Body:**
+```json
+{
+  "content": "string (Markdown content to validate)",
+  "references": [
+    {
+      "title": "string",
+      "authors": ["string"],
+      "year": "integer",
+      "apaCitation": "string"
+    }
+  ]
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "isValid": "boolean",
+  "errors": [
+    {
+      "type": "string (CITATION_FORMAT|MISSING_REFERENCE|INVALID_CITATION)",
+      "message": "string",
+      "line": "integer (if applicable)"
+    }
+  ],
+  "suggestions": ["string"]
+}
+```
+
+## AI Integration APIs
+
+### AI Content Generation
+```
+POST /ai/generate
+```
+
+**Request Body:**
+```json
+{
+  "topic": "string (required)",
+  "context": "string (optional - existing content)",
+  "requirements": {
+    "length": "integer (words)",
+    "tone": "enum (ACADEMIC|PROFESSIONAL|EDUCATIONAL)",
+    "audience": "enum (BEGINNER|INTERMEDIATE|ADVANCED)",
+    "citationStyle": "enum (APA|MLA|CHICAGO) (default: APA)"
+  }
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "generatedContent": "string",
+  "references": [
+    {
+      "title": "string",
+      "authors": ["string"],
+      "year": "integer",
+      "apaCitation": "string"
+    }
+  ],
+  "confidence": "float (0-1)"
+}
+```
+
+## Error Handling
+
+### Standard Error Response (4xx/5xx):
+```json
+{
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": "object (optional)"
+  }
+}
+```
+
+## Authentication
+All API requests require authentication via Bearer token:
+```
+Authorization: Bearer {token}
+```
