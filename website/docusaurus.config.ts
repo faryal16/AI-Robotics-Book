@@ -15,10 +15,10 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://faryal16.github.io',
+  url: 'https://website-ame318zvn-codewithfairys-projects.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is '/<projectName>/'
-  baseUrl: '/AI-Robotics-Book/',
+  // For Vercel deployment, use /
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
