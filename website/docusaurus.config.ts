@@ -75,20 +75,20 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI & Humanoid Robotics',
+      title: 'AI Robotics',
       logo: {
-        alt: 'Physical AI & Humanoid Robotics Logo',
-        src: 'img/logo.svg',
+        alt: 'AI Robotics Logo',
+        src: 'img/logo.png',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'bookSidebar',
           position: 'left',
-          label: 'Book',
+          label: '📚 Books',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/faryal16/AI-Robotics-Book',
           label: 'GitHub',
           position: 'right',
         },
