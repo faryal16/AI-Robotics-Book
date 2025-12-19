@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://website-ame318zvn-codewithfairys-projects.vercel.app',
+  url: 'https://ai-robotics-book-git-master-codewithfairys-projects.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For Vercel deployment, use /
   baseUrl: '/',
