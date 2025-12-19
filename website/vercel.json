@@ -14,7 +14,7 @@
       "dest": "/index.html"
     }
   ],
-  "installCommand": "cd website && npm install",
-  "buildCommand": "cd website && npm run build",
-  "outputDirectory": "website/build"
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build"
 }
