@@ -1,5 +1,4 @@
 {
-  "framework": "docusaurus",
   "builds": [
     {
       "src": "package.json",
@@ -14,5 +13,8 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "installCommand": "cd website && npm install",
+  "buildCommand": "cd website && npm run build",
+  "outputDirectory": "website/build"
 }
