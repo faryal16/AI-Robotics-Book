@@ -1,0 +1,118 @@
+/* Chat Interface specific styles */
+.chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: inherit;
+}
+
+.chat-messages {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  background-color: #fafafa;
+  color: inherit;
+}
+
+.chat-message {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.chat-message-user {
+  text-align: right;
+}
+
+.message-bubble {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.message-bubble-user {
+  background-color: #007acc;
+  color: white;
+}
+
+.message-bubble-bot {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 36px;
+  max-height: 80px;
+  font-size: 13px;
+}
+
+.chat-button {
+  padding: 6px 12px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.chat-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.sources {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.sources ul {
+  margin: 5px 0 0 0;
+  padding-left: 15px;
+}
+
+/* Dark mode support for chat interface */
+[data-theme='dark'] .chat-messages {
+  background-color: #333;
+  color: white;
+  border-color: #444;
+}
+
+[data-theme='dark'] .message-bubble-user {
+  background-color: #007acc;
+  color: white;
+}
+
+[data-theme='dark'] .message-bubble-bot {
+  background-color: #555;
+  color: white;
+}
+
+[data-theme='dark'] .chat-input {
+  background-color: #333;
+  color: white;
+  border-color: #444;
+}
+
+[data-theme='dark'] .chat-input::placeholder {
+  color: #aaa;
+}

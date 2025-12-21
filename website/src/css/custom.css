@@ -173,3 +173,137 @@
     font-size: 1rem;
   }
 }
+
+/* Chat Widget Styles */
+.chat-input-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  pointer-events: none; /* Allows clicks to pass through when modal is closed */
+}
+
+.chat-input-container > * {
+  pointer-events: auto; /* Enables clicks on the button and modal */
+}
+
+.chat-toggle-button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.chat-toggle-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.chat-modal {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 500px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark mode support for chat modal */
+[data-theme='dark'] .chat-modal {
+  background: #242526;
+  border: 1px solid #444;
+}
+
+[data-theme='dark'] .chat-modal-header {
+  background-color: #333;
+  border-bottom: 1px solid #444;
+  color: white;
+}
+
+[data-theme='dark'] .chat-messages {
+  background-color: #242526;
+  color: white;
+}
+
+[data-theme='dark'] .message-bubble-user {
+  background-color: #007acc;
+  color: white;
+}
+
+[data-theme='dark'] .message-bubble-bot {
+  background-color: #333;
+  color: white;
+}
+
+[data-theme='dark'] .chat-modal-footer {
+  background-color: #333;
+  border-top: 1px solid #444;
+}
+
+.chat-modal-header {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-modal-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-modal-footer {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.chat-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.chat-message-user {
+  background-color: #007acc;
+  color: white;
+  margin-left: auto;
+}
+
+.chat-message-bot {
+  background-color: #e9ecef;
+  color: black;
+  margin-right: auto;
+}
+
+.chat-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+}
