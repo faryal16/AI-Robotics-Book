@@ -85,7 +85,38 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'bookSidebar',
           position: 'left',
-          label: '📚 Books',
+          label: '📚 Book',
+        },
+        {
+          type: 'dropdown',
+          label: '📖 Quick Access',
+          position: 'left',
+          items: [
+            {
+              to: '/docs/chapter-1/1.1-introduction',
+              label: '🤖 Chapter 1: Introduction',
+            },
+            {
+              to: '/docs/chapter-2/2.1-introduction',
+              label: '🦾 Chapter 2: Design',
+            },
+            {
+              to: '/docs/chapter-3/3.1-introduction',
+              label: '⚙️ Chapter 3: Control Systems',
+            },
+            {
+              to: '/docs/chapter-4/4.1-introduction',
+              label: '👁️ Chapter 4: Sensing',
+            },
+            {
+              to: '/docs/chapter-5/5.1-introduction',
+              label: '🧠 Chapter 5: AI & Learning',
+            },
+            {
+              to: '/docs/chapter-6/6.1-introduction',
+              label: '🚀 Chapter 6: Future',
+            },
+          ],
         },
         {
           href: 'https://github.com/faryal16/AI-Robotics-Book',
