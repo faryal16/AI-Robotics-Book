@@ -18,8 +18,9 @@ const sidebars: SidebarsConfig = {
     'intro',
     {
       type: 'category',
-      label: 'Chapter 1: Introduction to Physical AI & Humanoid Robotics',
-      collapsed: false,
+      label: '🤖 Chapter 1: Introduction to Physical AI & Humanoid Robotics',
+      collapsed: true,
+      className: 'chapter-1-category',
       items: [
         'chapter-1/1.1-introduction',
         'chapter-1/1.2-section-one',
@@ -29,8 +30,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Chapter 2: Fundamentals of Humanoid Design',
-      collapsed: false,
+      label: '🦾 Chapter 2: Fundamentals of Humanoid Design',
+      collapsed: true,
+      className: 'chapter-2-category',
       items: [
         'chapter-2/2.1-introduction',
         'chapter-2/2.2-biomechanics',
@@ -40,8 +42,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Chapter 3: Control Systems for Humanoid Robots',
-      collapsed: false,
+      label: '⚙️ Chapter 3: Control Systems for Humanoid Robots',
+      collapsed: true,
+      className: 'chapter-3-category',
       items: [
         'chapter-3/3.1-introduction',
         'chapter-3/3.2-locomotion-control',
@@ -51,8 +54,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Chapter 4: Sensing and Perception',
-      collapsed: false,
+      label: '👁️ Chapter 4: Sensing and Perception',
+      collapsed: true,
+      className: 'chapter-4-category',
       items: [
         'chapter-4/4.1-introduction',
         'chapter-4/4.2-sensors',
@@ -62,8 +66,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Chapter 5: AI and Learning in Humanoid Robotics',
-      collapsed: false,
+      label: '🧠 Chapter 5: AI and Learning in Humanoid Robotics',
+      collapsed: true,
+      className: 'chapter-5-category',
       items: [
         'chapter-5/5.1-introduction',
         'chapter-5/5.2-machine-learning',
@@ -73,8 +78,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Chapter 6: Applications and Future Directions',
-      collapsed: false,
+      label: '🚀 Chapter 6: Applications and Future Directions',
+      collapsed: true,
+      className: 'chapter-6-category',
       items: [
         'chapter-6/6.1-introduction',
         'chapter-6/6.2-applications',
